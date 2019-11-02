@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_club"
+            android:layout_width="150dp"
+            android:text="@string/title_club" />
+
+        <TextView
+            android:id="@+id/txt_played"
+            android:layout_weight="1"
+            android:text="@string/title_played" />
+
+        <TextView
+            android:id="@+id/txt_won"
+            android:layout_weight="1"
+            android:text="@string/title_won" />
+
+        <TextView
+            android:id="@+id/txt_drawn"
+            android:layout_weight="1"
+            android:text="@string/title_drawn" />
+
+        <TextView
+            android:id="@+id/txt_lost"
+            android:layout_weight="1"
+            android:text="@string/title_lost" />
+
+        <TextView
+            android:id="@+id/txt_goal_for"
+            android:layout_weight="1"
+            android:text="@string/title_goal_for" />
+
+        <TextView
+            android:id="@+id/txt_goal_again"
+            android:layout_weight="1"
+            android:text="@string/title_goal_again" />
+
+        <TextView
+            android:id="@+id/txt_goal_diff"
+            android:layout_weight="1"
+            android:text="@string/title_goal_diff" />
+
+        <TextView
+            android:id="@+id/txt_points"
+            android:layout_weight="1"
+            android:text="@string/title_points" />
+    </TableRow>
+
+</TableLayout>

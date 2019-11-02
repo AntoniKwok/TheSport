@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.match.DetailMatchActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_home_team_poster"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/home_team"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_home_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/home_team"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/img_home_team_poster"
+                        app:layout_constraintStart_toStartOf="@+id/img_home_team_poster"
+                        app:layout_constraintTop_toBottomOf="@+id/img_home_team_poster" />
+
+                    <ImageView
+                        android:id="@+id/img_away_team_poster"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@string/away_team"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_away_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/away_team"
+                        android:textColor="@color/colorBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/img_away_team_poster"
+                        app:layout_constraintStart_toStartOf="@+id/img_away_team_poster"
+                        app:layout_constraintTop_toBottomOf="@+id/img_away_team_poster" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/point_two"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_home_team_name"
+                        app:layout_constraintEnd_toStartOf="@+id/img_away_team_poster"
+                        app:layout_constraintStart_toEndOf="@+id/img_home_team_poster"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_home_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_team_score"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_home_team_name"
+                        app:layout_constraintEnd_toStartOf="@+id/textView"
+                        app:layout_constraintStart_toEndOf="@+id/img_home_team_poster"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_away_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/away_team_score"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_away_team_name"
+                        app:layout_constraintEnd_toStartOf="@+id/img_away_team_poster"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TableLayout
+                android:id="@+id/layout_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view">
+
+                <TableRow android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_match_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/match_event"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_match_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/match_event"
+                        android:textColor="@color/colorBlack" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_match_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/match_event"
+                        android:textColor="@color/colorBlack" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/spectators"
+                        android:textColor="@color/colorBlack" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/txt_spectators"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/spectators" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_home_formation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/formation" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/formation"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/txt_away_formation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/formation" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_home_shots"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/shots" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/shots"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/txt_away_shots"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/shots" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_home_yellow_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/yellow_card" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/yellow_card"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/txt_away_yellow_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/yellow_card" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_home_red_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/red_card" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/red_card"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/txt_away_red_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/red_card" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_home_goals"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/goals" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/goals"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/txt_away_goals"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/goals" />
+
+                </TableRow>
+
+
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

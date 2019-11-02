@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_league_info"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="@string/title_info" />
+
+    <item
+        android:id="@+id/navigation_match"
+        android:icon="@drawable/ic_schedule_black_24dp"
+        android:title="@string/title_match" />
+
+    <item
+        android:id="@+id/navigation_standing"
+        android:icon="@drawable/ic_trending_up_black_24dp"
+        android:title="@string/title_standing" />
+
+    <item
+        android:id="@+id/navigation_team"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="@string/title_team" />
+
+</menu>

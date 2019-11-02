@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.detail.fragment.standings.StandingsFragment">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/icon_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron_left_white_24dp" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/title_standing"
+            android:textColor="@color/colorWhite"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:layout_width="0dp" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/header"
+        android:padding="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center">
+
+        <TableRow>
+            <TextView
+                android:layout_width="150dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_club"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_played"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_won"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_drawn"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_lost"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_goal_for"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_goal_again"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_goal_diff"/>
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:text="@string/title_points"/>
+        </TableRow>
+
+    </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_standings"
+        android:layout_below="@id/table_header"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
